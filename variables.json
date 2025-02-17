@@ -1,0 +1,14 @@
+{
+    "periodicos_izquierda": {
+        "el_pais": "https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/portada",
+        "publico": "https://www.publico.es/rss",
+        "el_diario": "https://www.eldiario.es/rss/"
+    },
+
+    "periodicos_derecha": {
+        "el_mundo": "https://e00-elmundo.uecdn.es/elmundo/rss/portada.xml",
+        "abc": "https://www.abc.es/rss/feeds/abcPortada.xml",
+        "la_razon": "https://www.larazon.es/rss/portada.xml"
+    }
+
+}

@@ -77,7 +77,7 @@ x-airflow-common:
     - ${AIRFLOW_PROJ_DIR:-.}/logs:/opt/airflow/logs
     - ${AIRFLOW_PROJ_DIR:-.}/config:/opt/airflow/config
     - ${AIRFLOW_PROJ_DIR:-.}/plugins:/opt/airflow/plugins
-    #- ${AIRFLOW_PROJ_DIR:-.}/VARIABLES_JSON.json:/opt/airflow/VARIABLES_JSON.json
+    - ${AIRFLOW_PROJ_DIR:-.}/variables.json:/opt/airflow/variables.json
   user: "${AIRFLOW_UID:-50000}:0"
   depends_on:
     &airflow-common-depends-on
@@ -234,12 +234,12 @@ services:
           echo "Please follow the instructions to increase amount of resources available:"
           echo "   https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html#before-you-begin"
           echo
-        fi   
+        fi
+        echo -e "IMPORTAMOS VARIABLES"
+        # airflow variables import /opt/airflow/variables.json
         mkdir -p /sources/logs /sources/dags /sources/plugins
         chown -R "${AIRFLOW_UID}:0" /sources/{logs,dags,plugins}
         exec /entrypoint airflow version
-    # echo -e "IMPORTAMOS VARIABLES"
-    # airflow variables import /opt/airflow/VARIABLES_JSON.json
     # yamllint enable rule:line-length
     environment:
       <<: *airflow-common-env
@@ -251,7 +251,7 @@ services:
     user: "0:0"
     volumes:
       - ${AIRFLOW_PROJ_DIR:-.}:/sources
-      #- ${AIRFLOW_PROJ_DIR:-.}/VARIABLES_JSON.json:/opt/airflow/VARIABLES_JSON.json
+      - ${AIRFLOW_PROJ_DIR:-.}/variables.json:/opt/airflow/variables.json
 
   airflow-cli:
     <<: *airflow-common
