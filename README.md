@@ -1,4 +1,3 @@
-
 # Proyecto de Extracción de Noticias RSS con Apache Airflow
 
 ## Propósito del Proyecto
@@ -52,13 +51,19 @@ El entorno de desarrollo está basado en Docker y Docker Compose para facilitar 
 - `config/`: Configuraciones adicionales de Airflow.
 - `plugins/`: Plugins personalizados de Airflow.
 - `variables.json`: Archivo JSON con las variables de configuración de las fuentes RSS.
+- `requirements.txt`: Archivo con las dependencias de Python.
+- `dockerfile`: Dockerfile para construir la imagen de Airflow con las dependencias necesarias.
+- `docker-compose.yml`: Archivo de configuración de Docker Compose para levantar los servicios.
 
 ## Descripción del DAG Principal
 
 El DAG `extract_rss_dag.py` realiza las siguientes tareas:
 
 1. Extrae noticias de fuentes RSS clasificadas por ideología (izquierda y derecha).
-2. Almacena las noticias extraídas en una base de datos PostgreSQL, evitando duplicados.
+2. Visualiza las noticias extraídas para verificar su formato.
+3. Elimina la tabla de noticias existente en la base de datos PostgreSQL.
+4. Recrea la tabla de noticias en la base de datos PostgreSQL.
+5. Almacena las noticias extraídas en la base de datos PostgreSQL, evitando duplicados.
 
 ## Contribuciones
 
