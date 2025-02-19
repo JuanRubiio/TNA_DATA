@@ -1,14 +1,36 @@
 {
-    "periodicos_izquierda": {
-        "el_pais": "https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/portada",
-        "publico": "https://www.publico.es/rss",
-        "el_diario": "https://www.eldiario.es/rss/"
-    },
-
-    "periodicos_derecha": {
-        "el_mundo": "https://e00-elmundo.uecdn.es/elmundo/rss/portada.xml",
-        "abc": "https://www.abc.es/rss/feeds/abcPortada.xml",
-        "la_razon": "https://www.larazon.es/rss/portada.xml"
+    "periodicos": {
+        "el_mundo": {
+            "url": "https://e00-elmundo.uecdn.es/elmundo/rss/portada.xml",
+            "enabled": true
+        },
+        "el_pais": {
+            "url": "https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/portada",
+            "enabled": true
+        },
+        "abc": {
+            "url": "https://www.abc.es/rss/feeds/abcPortada.xml",
+            "enabled": false
+        },
+        "el_diario": {
+            "url": "https://www.eldiario.es/rss/",
+            "enabled": false
+        },
+        "es_diario": {
+            "url": "https://www.esdiario.com/rss/home.xml",
+            "enabled": true
+        },
+        "el_confidencial": {
+            "url": "https://rss.elconfidencial.com/espana/",
+            "enabled": true
+        },
+        "la_vanguardia": {
+            "url": "https://www.lavanguardia.com/rss/home.xml",
+            "enabled": true
+        },
+        "el_periodico": {
+            "url": "https://www.elperiodico.com/es/cds/rss/?id=board.xml",
+            "enabled": true
+        }
     }
-
 }
